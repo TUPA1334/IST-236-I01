@@ -1,0 +1,52 @@
+<mxfile host="Electron" modified="2024-01-25T16:09:46.280Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.21 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="zF5uAit8m8akIxHR3Pr4" version="22.1.21" type="device">
+  <diagram name="Page-1" id="BVrchgIGJs7bedTVpBGp">
+    <mxGraphModel dx="2188" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="z-A52wYT0OrPYejm1NIH-1" value="" style="rounded=1;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="-300" y="230" width="685" height="395" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-2" value="" style="rounded=1;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="130" y="230" width="685" height="395" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-3" value="Main Screen" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-11" y="50" width="107" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-4" value="Modal Screen" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="422.5" y="50" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-5" value="Dice Roller Title" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-32.5" y="100" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-6" value="Roll Dice Button&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-17.5" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-7" value="Dice 1" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-130" y="300" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-8" value="Dice 2" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="117.5" y="300" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-9" value="Dice Result" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-17.5" y="430" width="107" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-10" value="Wager Result&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-17.5" y="490" width="107" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-11" value="Enter Guess Input&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="359" y="120" width="227" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-12" value="Enter Wager Input" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="359" y="210" width="227" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-13" value="Roll Dice Button" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="z-A52wYT0OrPYejm1NIH-14" value="Cancel Button" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
