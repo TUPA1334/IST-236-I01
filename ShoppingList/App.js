@@ -1,6 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  Modal,
+} from "react-native";
 
 export default function App() {
   // Create state managment variables
@@ -8,6 +15,27 @@ export default function App() {
   const [shoppingItems, setShoppingItems] = useState("milk");
   const [enteredItemText, setEnteredItemText] = useState("");
 
+  // Create Modal Screen Handler Functions
+  function startAddItemHandler() {
+    setModalIsVisible(true);
+  }
+
+  function endAddItemHandler() {
+    setModalIsVisible(false);
+  }
+
+  function itemInputHandler(enteredText) {
+    setEnteredItemText(enteredText);
+  }
+
+  function addItemHandler() {
+    console.log(enteredItemText);
+    if (shoppingItems.length === "") {
+      setShoppingItems(enteredItemText);
+    } else {
+      setShoppingItems(shoppingItems + "\n" + enteredItemText);
+    }
+  }
   return (
     <>
       {/* Set Status Bar Styling */}
@@ -63,7 +91,6 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
-    backgroundColor: "#4e4e4e",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -79,12 +106,8 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     flex: 4,
-    backgroundColor: "#4e4e4e",
+    backgroundColor: "#ffffff",
     alignItems: "center",
     justifyContent: "center",
-  },
-  text: {
-    fontSize: 20,
-    color: "#fff",
   },
 });
