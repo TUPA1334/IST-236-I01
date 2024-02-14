@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { useState,} from "react";
+import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
@@ -10,8 +10,8 @@ import Colors from "./constants/colors";
 export default function App() {
   // Set up custom Fonts
   const [fontsLoaded] = useFonts({
-    "squealer": require("./assets/fonts/Squealer.otf"),
-    "squealer-embossed": require("./assets/fonts/SquealerEmbossed.otf")
+    squealer: require("./assets/fonts/Squealer.otf"),
+    "squealer-embossed": require("./assets/fonts/SquealerEmbossed.otf"),
   });
 
   // Set the state variable for the current screen

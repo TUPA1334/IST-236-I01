@@ -1,8 +1,9 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, FlatList, Image } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useState } from "react";
 import NavButton from "../components/NavButton";
 import Title from "../components/Title";
+import EventItems from "../components/EventItems";
 
 function EventsScreen(props) {
   // Set the safe area screen boundaries
@@ -40,7 +41,7 @@ function EventsScreen(props) {
       id: 5,
     },
   ]);
-   
+
   return (
     <View
       style={[
@@ -53,13 +54,33 @@ function EventsScreen(props) {
         },
       ]}
     >
-      <View>
+      <View style={styles.titleContainer}>
         <Title>Events</Title>
       </View>
 
-      <View>
-        <NavButton onPress={props.onNext}>View Events</NavButton>
-    </View>
+      <View style={styles.listContainer}>
+        <FlatList
+          data={eventItems}
+          keyExtractor={(item) => item.id}
+          alwaysBounceVertical={false}
+          showsVerticalScrollIndicator={false}
+          renderItem={(itemData) => {
+            return (
+              <EventItems
+                name={itemData.item.name}
+                image={itemData.item.image}
+                date={itemData.item.date}
+              />
+            );
+          }}
+        >
+          Events
+        </FlatList>
+      </View>
+
+      <View style={styles.buttonContainer}>
+        <NavButton onPress={props.onNext}>Home Page</NavButton>
+      </View>
     </View>
   );
 }
@@ -69,6 +90,19 @@ export default EventsScreen;
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
+    width: 400,
     alignItems: "center",
+  },
+  titleContainer: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  listContainer: {
+    flex: 7,
+    width: "95%",
+  },
+  buttonContainer: {
+    flex: 1,
+    marginTop: 20,
   },
 });

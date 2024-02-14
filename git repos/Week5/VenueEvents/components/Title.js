@@ -1,7 +1,5 @@
-import { Text, StyleSheet} from "react-native";
+import { Text, StyleSheet } from "react-native";
 import Colors from "../constants/colors";
-
-
 
 function Title(props) {
   return <Text style={styles.title}>{props.children}</Text>;
@@ -14,6 +12,6 @@ const styles = StyleSheet.create({
     fontSize: 60,
     textAlign: "center",
     color: Colors.primary500,
-    fontFamily: "squealer"
-  }
-})
+    fontFamily: "squealer",
+  },
+});

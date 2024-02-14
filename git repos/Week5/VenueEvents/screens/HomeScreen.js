@@ -55,9 +55,8 @@ function HomeScreen(props) {
           www.houseofblues.com
         </Text>
         <View style={styles.infoContainer}>
-          <NavButton
-            onPress={() => props.onNext("Events")}
-          >View Events
+          <NavButton onPress={() => props.onNext("Events")}>
+            View Events
           </NavButton>
         </View>
       </View>
@@ -97,5 +96,5 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
-  }
+  },
 });
