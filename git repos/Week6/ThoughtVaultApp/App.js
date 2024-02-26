@@ -2,9 +2,9 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { useFonts } from "expo-font";
 import { StyleSheet } from "react-native";
-import HomeScreen from "./screens/HomeScreen";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Colors } from "./constants/colors";
+import HomeScreen from "./screens/HomeScreen";
+import Colors from "./constants/colors";
 import NotesScreen from "./screens/NotesScreen";
 import AddNoteScreen from "./screens/AddNoteScreen";
 
@@ -66,7 +66,14 @@ export default function App() {
   }
 
   if (currentScreen === "notes") {
-    screen = <NotesScreen onHome={homeScreenHandler} />;
+    screen = (
+      <NotesScreen
+        onHome={homeScreenHandler}
+        onAdd={addNoteScreenHandler}
+        onDelete={deleteNoteHandler}
+        currentNotes={currentNotes}
+      />
+    );
   }
 
   return (

@@ -1,10 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import HomeScreen from "./screens/HomeScreen";
+import { useFonts } from "expo-font";
+import { StyleSheet } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Colors } from "./constants/colors";
-
+import HomeScreen from "./screens/HomeScreen";
+import Colors from "./constants/colors";
+import NotesScreen from "./screens/NotesScreen";
+import AddNoteScreen from "./screens/AddNoteScreen";
 function NavButton(props) {
   return (
     <Pressable

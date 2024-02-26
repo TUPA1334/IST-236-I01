@@ -1,9 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import HomeScreen from "./screens/HomeScreen";
+import { useFonts } from "expo-font";
+import { StyleSheet } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Colors } from "./constants/colors";
 
 function NotesScreen(props) {
   // Set safe area insets for the screen
@@ -23,6 +22,24 @@ function NotesScreen(props) {
     >
       <View style={styles.titleContainer}>
         <Title>Notes Screen</Title>
+      </View>
+
+      <View>
+        <FlatList
+          data={props.currentNotes}
+          keyExtractor={(item, index) => {
+            return item.id;
+          }}
+          alwaysBounceVertical={false}
+          renderItem={(itemData) => {
+            <NotesItem
+              id={note.item.id}
+              title={note.item.title}
+              //onView={}
+              onDelete={props.onDelete.bind(this, itemData.item.id)}
+            />;
+          }}
+        />
       </View>
 
       <View style={styles.navButtonContainer}>
