@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Title from "../components/Title";
 import { RadioGroup } from "react-native-radio-buttons-group";
 import { Colors } from "react-native/Libraries/NewAppScreen";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 function HomeScreen(props) {
   const insets = useSafeAreaInsets();
@@ -19,13 +20,24 @@ function HomeScreen(props) {
         },
       ]}
     >
-      <View>
+      <View style={styles.titleContainer}>
         <Title>Johnny Jims</Title>
       </View>
 
       <ScrollView>
         <View>
           <Text>Sandwich Size:</Text>
+          <RadioGroup
+            radioButtons={props.breadRadioButtons}
+            onPress={props.onSetBreadId}
+            selectedId={props.breadId}
+            layout="row"
+            containerStyle={styles.radioGroup}
+            labelStyle={styles.radioGroupLabel}
+          />
+        </View>
+        <View>
+          <Text>Bread Type:</Text>
           <RadioGroup
             radioButtons={props.sizeRadioButtons}
             onPress={props.onSetSizeId}
@@ -34,6 +46,27 @@ function HomeScreen(props) {
             containerStyle={styles.radioGroup}
             labelStyle={styles.radioGroupLabel}
           />
+        </View>
+
+        <View style={styles.rowContainer}>
+          <View style={styles.checkBoxContainer}>
+            <Text style={styles.checkBoxHeader}>Meat Types:</Text>
+            <View style={styles.checkBoxSubContainer}>
+              {props.meat.map((item) => {
+                return (
+                  <BouncyCheckbox
+                    key={item.id}
+                    text={item.name}
+                    onPress={props.onSetMeats.bind(this, item.id)}
+                    textStyle={{
+                      textDecorationLine: "none",
+                      color: Colors.primary500,
+                    }}
+                  />
+                );
+              })}
+            </View>
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -51,23 +84,30 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 5,
     borderColor: Colors.primary500,
-    paddingHorizontal: 10,
+    paddingHorizontal: 30,
+    paddingVertical: 5,
   },
   scrollContainer: {
     flex: 1,
   },
   radioContainer: {
-    margin: 10,
+    justifyContent: "center",
+    alignContent: "center",
   },
   radioHeader: {
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 30,
+    color: Colors.primary500,
   },
   radioGroup: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    paddingBottom: 20,
   },
   radioGroupLabel: {
-    fontSize: 20,
+    fontSize: 15,
+    color: Colors.primary500,
+  },
+  rowContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    paddingBottom: 20,
   },
 });
