@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, View, Text } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+import Colors from "../constants/colors";
 
 function NavButton(props) {
   return (
@@ -17,16 +17,22 @@ export default NavButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    borderWidth: 3,
-    borderColor: Colors.primary500,
-    backgroundColor: Colors.accent500,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: Colors.primary500,
+    borderRadius: 300,
     width: 300,
-    marginTop: 10,
+    marginHorizontal: 10,
+    marginVertical: 10,
   },
   textContainer: {},
   text: {
     fontSize: 25,
     textAlign: "center",
     padding: 8,
+    color: Colors.accent500,
+  },
+  pressedItem: {
+    opacity: 0.3,
   },
 });

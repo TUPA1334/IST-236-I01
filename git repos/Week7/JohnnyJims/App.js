@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Colors from "./constants/colors";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import HomeScreen from "./screens/HomeScreen";
+import OrderReviewScreen from "./screens/OrderReviewScreen";
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState("");
@@ -194,6 +195,34 @@ export default function App() {
     setMealCombo((previous) => !previous);
   }
 
+  function homeScreenHandler() {
+    setCurrentPrice(0);
+    setCurrentScreen("home");
+  }
+
+  function orderReviewHandler() {
+    let price = 0;
+    for (let i = 0; i < meats.length; i++) {
+      if (meats[i].value) {
+        price = price + meats[i].price;
+      }
+    }
+    if (doubleMeat) {
+      price = price * 2;
+    }
+    if (doubleCheese) {
+      price = price + 1.25;
+    }
+    if (mealCombo) {
+      price = price + 3.75;
+    }
+
+    price = price + sizeRadioButtons[sizeId].price;
+
+    setCurrentPrice(price);
+    setCurrentScreen("review");
+  }
+
   let screen = (
     <HomeScreen
       sizeId={sizeId}
@@ -218,8 +247,28 @@ export default function App() {
       onSetDoubleCheese={setDoubleCheeseHandler}
       onSetToasted={setToastedHandler}
       onSetMealCombo={setMealComboHandler}
+      onNext={orderReviewHandler}
     />
   );
+
+  if (currentScreen == "review") {
+    screen = (
+      <OrderReviewScreen
+        size={sizeRadioButtons[sizeId].value}
+        bread={breadRadioButtons[breadId].value}
+        cheese={cheeseRadioButtons[cheeseId].value}
+        meats={meats}
+        sauces={sauces}
+        vegetables={vegetables}
+        doubleMeat={doubleMeat}
+        doubleCheese={doubleCheese}
+        toasted={toasted}
+        mealCombo={mealCombo}
+        price={currentPrice}
+        onNext={homeScreenHandler}
+      />
+    );
+  }
 
   return (
     <>
