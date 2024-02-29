@@ -155,6 +155,7 @@ export default function App() {
     { id: 8, name: "Jalapenos", value: false },
     { id: 9, name: "Banana Peppers", value: false },
   ]);
+
   const [doubleMeat, setDoubleMeat] = useState(false);
   const [doubleCheese, setDoubleCheese] = useState(false);
   const [toasted, setToasted] = useState(false);

@@ -186,12 +186,12 @@ function HomeScreen(props) {
 
           <View style={styles.addOnsContainer}>
             <View>
-              <Text style={styles.addOnsLabel}>Double Meat</Text>
+              <Text style={styles.addOnsLabel}>Toasted</Text>
               <Switch
-                onValueChange={props.onSetDoubleMeat}
-                value={props.doubleMeat}
+                onValueChange={props.onSetToasted}
+                value={props.toasted}
                 thumbColor={
-                  props.doubleMeat ? Colors.primary500 : Colors.primary800
+                  props.toasted ? Colors.primary500 : Colors.primary800
                 }
                 trackColor={{
                   false: Colors.primary500,
@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
   radioGroup: {
     paddingBottom: 20,
   },
-  radioGroupLabel: {
+  radioGroupLabels: {
     fontSize: 15,
     color: Colors.primary500,
   },
@@ -282,9 +282,9 @@ const styles = StyleSheet.create({
   },
   addOnsLabel: {
     color: Colors.primary500,
-    fontSize: 20
+    fontSize: 20,
   },
   buttonContainer: {
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 });
