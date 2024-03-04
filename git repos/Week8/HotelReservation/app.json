@@ -3,7 +3,7 @@
     "name": "HotelReservation",
     "slug": "HotelReservation",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "auto",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
