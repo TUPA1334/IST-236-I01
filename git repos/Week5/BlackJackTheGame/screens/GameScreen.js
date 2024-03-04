@@ -1,7 +1,7 @@
-import { StylesSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Title from "../components/Title";
 import NavButton from "../components/NavButton";
+import Header from "../components/Header";
 
 function GameScreen(props) {
   // Set Safe Area Screen Boundries
@@ -19,12 +19,21 @@ function GameScreen(props) {
         },
       ]}
     >
-      <View style={styles.titleContainer}>
-        <Title>Game Screen</Title>
+      <View style={styles.headerContainer}>
+        <Header>Computer's Hand</Header>
       </View>
 
-      <View style={styles.buttonContainer}>
-        <NavButton onPress={props.onNext}>Play Now</NavButton>
+      <View style={styles.headerContainer}>
+        <Header>Player's Hand</Header>
+      </View>
+
+      <View style={styles.buttonsContainer}>
+        <View style={styles.buttonContainer}>
+          <NavButton onPress={props.onNext}>Hit Me!</NavButton>
+        </View>
+        <View style={styles.buttonContainer}>
+          <NavButton onPress={props.onNext}>Stay!</NavButton>
+        </View>
       </View>
     </View>
   );
@@ -32,27 +41,25 @@ function GameScreen(props) {
 
 export default GameScreen;
 
-styles = StylesSheet.create({
+styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
   },
-  titleContainer: {
+  headerContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginVertical: 20,
   },
-  imageContainer: {
-    flex: 5,
+  buttonsContainer: {
+    flex: 1,
+    flexDirection: "row",
     justifyContent: "center",
-  },
-  image: {
-    width: "100%",
-    resizemode: "contain",
+    alignItems: "center",
   },
   buttonContainer: {
     flex: 1,
+    height: "100%",
     justifyContent: "center",
-    alignItems: "center",
+    marginHorizontal: 10,
   },
 });

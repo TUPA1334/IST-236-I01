@@ -35,7 +35,7 @@ export default function App() {
     screen = <GameScreen onNext={gameOverHandler} />;
   }
 
-  if (currentScreen === "gamever") {
+  if (currentScreen === "gameOver") {
     screen = <GameOverScreen onNext={restartHandler} />;
   }
 

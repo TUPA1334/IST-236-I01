@@ -1,4 +1,4 @@
-import { StylesSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Title from "../components/Title";
 import NavButton from "../components/NavButton";
@@ -30,9 +30,9 @@ function GameOverScreen(props) {
   );
 }
 
-export default StartOverScreen;
+export default GameOverScreen;
 
-styles = StylesSheet.create({
+styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
   },
@@ -48,7 +48,7 @@ styles = StylesSheet.create({
   },
   image: {
     width: "100%",
-    resizemode: "contain",
+    resizeMode: "contain",
   },
   buttonContainer: {
     flex: 1,
