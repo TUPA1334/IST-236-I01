@@ -7,15 +7,12 @@ import {
   Text,
   View,
   Modal,
-  Image,
-  TextInput,
-  Pressable,
 } from "react-native";
 
 export default function App() {
   // Create state managment variables
   const [modalIsVisible, setModalIsVisible] = useState(false);
-  const [shoppingItems, setShoppingItems] = useState("");
+  const [shoppingItems, setShoppingItems] = useState("milk");
   const [enteredItemText, setEnteredItemText] = useState("");
 
   // Create Modal Screen Handler Functions
@@ -38,13 +35,11 @@ export default function App() {
     } else {
       setShoppingItems(shoppingItems + "\n" + enteredItemText);
     }
-    setEnteredItemText("");
-    endAddItemHandler();
   }
   return (
     <>
       {/* Set Status Bar Styling */}
-      <StatusBar style="light" />
+      <StatusBar style="auto" />
 
       {/* Set SafeAreaView Screen Container */}
       <SafeAreaView style={styles.appContainer}>
@@ -54,11 +49,9 @@ export default function App() {
         </View>
         {/* Set Add Item Button Container */}
         <View style={styles.buttonContainer}>
-          <Pressable
-            // Android Ripple Effect
-            android_ripple={{ color: "#0d0e0d" }}
-            // Style Button when Pressed
-            style={({ pressed }) => pressed && styles.pressedButton}
+          <Button
+            title="Add New Item"
+            color="#bada55"
             onPress={startAddItemHandler}
           />
         </View>
