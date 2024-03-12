@@ -7,6 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import CampgroundsOverviewScreen from "./screens/CampgroundsOverviewScreen";
+import Colors from "./constants/colors";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,7 +29,15 @@ export default function App() {
       <>
         <StatusBar style="auto" />
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="HomeScreen" screen>
+          <Stack.Navigator
+            initialRouteName="HomeScreen"
+            screenOptions={{
+              headerStyle: { backgroundColor: Colors.primary500 },
+              headerTintColor: Colors.primary300,
+              headerTitleStyle: { fontFamily: "mountain", fontSize: 40 },
+              contentStyle: { backgroundColor: Colors.primary800 },
+            }}
+          >
             <Stack.Screen
               name="HomeScreen"
               component={HomeScreen}
