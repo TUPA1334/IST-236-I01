@@ -34,8 +34,8 @@ function CampgroundItem(props) {
           <View style={styles.infoContainer}>
             <Text style={styles.name}>{props.name}</Text>
             <View style={styles.innerRowContainer}>
-              <Text style={styles.sites}>Sites: {props.numSites}</Text>
-              <Text style={styles.year}>{props.foundedYear}</Text>
+              <Text style={styles.sites}>Cost: ${props.numSites}</Text>
+              <Text style={styles.year}>Year Founded: {props.foundedYear}</Text>
             </View>
             <Text style={styles.rating}>Rating: {props.rating} / 5</Text>
           </View>
@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
   itemContainer: {
     backgroundColor: "#ccc",
     paddingHorizontal: 5,
-    paddingTop: 3,
-    marginBottom: 3,
+    paddingTop: 5,
+    marginBottom: 5,
     borderRadius: 7,
   },
   button: {
@@ -67,14 +67,14 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   rowContainer: {
-    height: 100,
+    height: 150,
     flexDirection: "contain",
     alignItems: "center",
     marginBottom: 10,
   },
   image: {
     width: "25%",
-    height: "100%",
+    height: "50%",
     resizeMode: "contain",
     borderRadius: 15,
   },
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   },
   name: {
     fontWeight: "bold",
-    textAlign: "left",
+    textAlign: "center",
     fontSize: 20,
   },
   sites: {

@@ -10,7 +10,7 @@ class Campground {
   }
 
   toString() {
-    return `${this.name} was founded in ${this.foundedYear} - Number of Sites: ${this.numSites}, Rating: ${this.rating}`;
+    return `${this.name} was founded in ${this.foundedYear} - Cost to Visit: ${this.numSites}, Rating: ${this.rating}`;
   }
 }
 

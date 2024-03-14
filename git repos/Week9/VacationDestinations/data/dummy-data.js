@@ -2,36 +2,36 @@ import State from "../models/states";
 import Campground from "../models/campgrounds";
 
 export const STATES = [
-  new State("s1", "Ireland", "#f44336"), // Red
-  new State("s2", "Florida", "#2196f3"), // Blue
-  new State("s3", "Georgia", "#4caf50"), // Green
-  new State("s4", "Kentucky", "#ff9800"), // Orange
-  new State("s5", "Louisiana", "#9c27b0"), // Purple
-  new State("s6", "Mississippi", "#ffeb3b"), // Yellow
-  new State("s7", "North Carolina", "#03a9f4"), // Light Blue
-  new State("s8", "South Carolina", "#8bc34a"), // Light Green
-  new State("s9", "Tennessee", "#ff5722"), // Deep Orange
-  new State("s10", "Virginia", "#673ab7"), // Deep Purple
+  new State("s1", "Ireland", "#009a44"),
+  new State("s2", "New Zealand", "#2521f3"),
+  new State("s3", "Italy", "#4caf50"),
+  new State("s4", "Greece", "#ff9800"),
+  new State("s5", "Japan", "#9c27b0"),
+  new State("s6", "Iceland", "#ffeb3b"),
+  new State("s7", "Spain", "#03a9f4"),
+  new State("s8", "Australia", "#8bc34a"),
+  new State("s9", "Portugal", "#ff5722"),
+  new State("s10", "Madagascar", "#002050"),
 ];
 
 export const CAMPGROUNDS = [
   new Campground(
     "c1",
     "s1",
-    "Honeycomb Campground",
-    50,
-    1985,
-    4.5,
-    "https://lh3.googleusercontent.com/p/AF1QipMLPG0TdYeAusalV9npDIlqBi5Xs_NCvHlSoY9y=s1360-w1360-h1020"
+    "Hore Abbey",
+    2273,
+    1270,
+    4.8,
+    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/02/8f/32/hore-abbey.jpg?w=1200&h=-1&s=1"
   ),
   new Campground(
     "c2",
     "s2",
-    "Arcadia Peace River Campground",
-    30,
-    1992,
-    4.0,
-    "https://lh3.googleusercontent.com/p/AF1QipPLHt4CcPQzydK8GZk45cp6F4OCLSrVPbEXj-7e=s1360-w1360-h1020"
+    "Auckland",
+    3409,
+    1350,
+    4.9,
+    "https://a.cdn-hotels.com/gdcs/production133/d294/4e4195aa-b9ca-42cd-923f-e8a65c8c5c7b.jpg"
   ),
   new Campground(
     "c3",
@@ -108,20 +108,20 @@ export const CAMPGROUNDS = [
   new Campground(
     "c11",
     "s1",
-    "Lake Guntersville State Park Campground",
-    40,
-    1979,
-    4.2,
-    "https://lh3.googleusercontent.com/p/AF1QipPaKHoIPvRZtgQFXX-v0JS3elhZOQAEcR4EtB3L=s1360-w1360-h1020"
+    "Dublin",
+    2750,
+    "Uknown",
+    4.9,
+    "https://upload.wikimedia.org/wikipedia/commons/4/42/Samuel_Beckett_Bridge_At_Sunset_Dublin_Ireland_%2897037639%29_%28cropped%29.jpeg"
   ),
   new Campground(
     "c12",
     "s2",
-    "Jetty Park Campground",
-    35,
-    1987,
-    4.3,
-    "https://lh3.googleusercontent.com/p/AF1QipOyfO-CtM3qY-_U2Lh_vXeJT-JDWF1Peo60-Jx6=s1360-w1360-h1020"
+    "Hobbiton Set",
+    175,
+    2003,
+    5.0,
+    "https://cdn.getyourguide.com/img/tour/5c20c7a23a5b0.jpeg/145.jpg"
   ),
   new Campground(
     "c13",

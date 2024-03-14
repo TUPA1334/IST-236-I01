@@ -42,7 +42,7 @@ export default function App() {
               name="HomeScreen"
               component={HomeScreen}
               options={{
-                title: "Campground Locations",
+                title: "Vacation Destinations",
               }}
             />
             <Stack.Screen

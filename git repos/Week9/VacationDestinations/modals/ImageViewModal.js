@@ -10,7 +10,7 @@ function ImageViewModal(props) {
       >
         <View style={styles.modalContainer}>
           <Image style={styles.image} source={{ uri: props.imageUrl }} />
-          <Button title="Return to Campgrounds" onPress={props.onClose} />
+          <Button title="Return to Destinations" onPress={props.onClose} />
         </View>
       </Modal>
     </View>
