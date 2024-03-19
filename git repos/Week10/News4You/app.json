@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "DunphyRealty",
-    "slug": "DunphyRealty",
+    "name": "News4You",
+    "slug": "News4You",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/realEstateSplash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
