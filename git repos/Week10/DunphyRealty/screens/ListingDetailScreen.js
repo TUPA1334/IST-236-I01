@@ -51,13 +51,9 @@ function ListingDetailScreen(props) {
           {selectedListing.state} {selectedListing.zipCode}
         </Text>
 
-        <Text style={styles.year}>
-            Built: {selectedListing.yearBuilt}
-        </Text>
+        <Text style={styles.year}>Built: {selectedListing.yearBuilt}</Text>
 
-        <Text style={styles.description}>
-            {selectedListing.description}
-        </Text>
+        <Text style={styles.description}>{selectedListing.description}</Text>
       </View>
     </View>
   );
@@ -115,5 +111,5 @@ const styles = StyleSheet.create({
     textAlign: "justify",
     fontSize: 15,
     fontFamily: "playfair",
-  }
+  },
 });

@@ -1,7 +1,7 @@
 import List from "../components/List/List";
 import { LISTINGS } from "../data/dummy_data";
 
-function  CondoListingsScreen() {
+function CondoListingsScreen() {
   const type = "Condo";
   const displayedListings = LISTINGS.filter((listingItem) => {
     return listingItem.type === type;
