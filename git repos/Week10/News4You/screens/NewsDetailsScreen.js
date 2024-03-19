@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   price: {
     color: Colors.primary300,
     fontSize: 35,
-    fontFamily: "playfairBold",
+    fontFamily: "playfair",
     paddingBottom: 5,
   },
   space: {

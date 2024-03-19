@@ -46,8 +46,8 @@ function DrawerNavigator() {
         name="Listings"
         component={TabsNavigator}
         options={{
-          title: "All Listings",
-          drawerLabel: "Real Estate Listings",
+          title: "Todays News",
+          drawerLabel: "Top News",
           drawerIcon: ({ color, size }) => (
             <Entypo name="list" size={size} color={color} />
           ),
@@ -57,8 +57,8 @@ function DrawerNavigator() {
         name="BookmarkedListings"
         component={BookmarksScreen}
         options={{
-          title: "Saved Listings",
-          drawerLabel: "Saved Listings",
+          title: "Saved Articles",
+          drawerLabel: "Saved Articles",
           drawerIcon: ({ color, size }) => (
             <Entypo name="bookmark" size={size} color={color} />
           ),
@@ -89,9 +89,9 @@ function TabsNavigator() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <Entypo name="home" size={size} color={color} />
+            <Entypo name="news" size={size} color={color} />
           ),
-          tabBarLabel: "Houses",
+          tabBarLabel: "US News",
         }}
       />
       <Tabs.Screen
@@ -100,9 +100,9 @@ function TabsNavigator() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="apartment" size={size} color={color} />
+            <Entypo name="megaphone" size={size} color={color} />
           ),
-          tabBarLabel: "Condos",
+          tabBarLabel: "World News",
         }}
       />
       <Tabs.Screen
@@ -111,7 +111,7 @@ function TabsNavigator() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="holiday-village" size={size} color={color} />
+            <Entypo name="medal" size={size} color={color} />
           ),
           tabBarLabel: "Combat Sports",
         }}
@@ -154,7 +154,7 @@ export default function App() {
               }}
             />
             <Stack.Screen
-              name="NewsDetails"
+              name="NewsDetailsScreen"
               component={NewsDetailsScreen}
               options={{
                 headerBackTitleVisible: false,

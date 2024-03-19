@@ -1,8 +1,8 @@
 import List from "../components/List/List";
 import { LISTINGS } from "../data/dummy_data";
 
-function HouseListingsScreen() {
-  const type = "House";
+function WorldNewsScreen() {
+  const type = "Condo";
   const displayedListings = LISTINGS.filter((listingItem) => {
     return listingItem.type === type;
   });
@@ -10,4 +10,4 @@ function HouseListingsScreen() {
   return <List items={displayedListings} />;
 }
 
-export default HouseListingsScreen;
+export default WorldNewsScreen;
