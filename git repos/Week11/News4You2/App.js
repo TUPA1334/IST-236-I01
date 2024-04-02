@@ -18,6 +18,7 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import { useCallback } from "react";
+import BookmarksContextProvider from "./store/context/bookmarks-context";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -137,31 +138,33 @@ export default function App() {
     return (
       <>
         <StatusBar style="auto" />
-        <NavigationContainer>
-          <Stack.Navigator
-            initialRouteName="DrawerScreen"
-            screenOptions={{
-              headerTintColor: Colors.primary300,
-              headerStyle: { backgroundColor: Colors.primary500 },
-              contentStyle: { backgroundColor: "black" },
-            }}
-          >
-            <Stack.Screen
-              name="DrawerScreen"
-              component={DrawerNavigator}
-              options={{
-                headerShown: false,
+        <BookmarksContextProvider>
+          <NavigationContainer>
+            <Stack.Navigator
+              initialRouteName="DrawerScreen"
+              screenOptions={{
+                headerTintColor: Colors.primary300,
+                headerStyle: { backgroundColor: Colors.primary500 },
+                contentStyle: { backgroundColor: "black" },
               }}
-            />
-            <Stack.Screen
-              name="NewsDetailsScreen"
-              component={NewsDetailsScreen}
-              options={{
-                headerBackTitleVisible: false,
-              }}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
+            >
+              <Stack.Screen
+                name="DrawerScreen"
+                component={DrawerNavigator}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="NewsDetailsScreen"
+                component={NewsDetailsScreen}
+                options={{
+                  headerBackTitleVisible: false,
+                }}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </BookmarksContextProvider>
       </>
     );
   }
