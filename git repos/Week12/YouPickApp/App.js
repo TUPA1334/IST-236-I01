@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from "./screens/HomeScreen";
 import ChoicesScreen from "./screens/ChoicesScreen";
 import ChosenScreen from "./screens/ChosenScreen";
 import SearchScreen from "./screens/SearchScreen";
@@ -18,6 +19,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} /> 
         <Stack.Screen name="Choices" component={ChoicesScreen} />
         <Stack.Screen name="You Pick!" component={YouPickScreen} />
         <Stack.Screen name="Search" component={SearchScreen} />
