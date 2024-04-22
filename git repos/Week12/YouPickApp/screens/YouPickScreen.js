@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Button, Modal, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button,
+  Modal,
+  TouchableOpacity,
+} from "react-native";
 
 // Dummy data for restaurants (replace with actual data from API)
 const dummyRestaurants = [
@@ -14,6 +21,15 @@ const YouPickScreen = ({ navigation }) => {
   const [restaurants, setRestaurants] = useState([]);
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
+
+  // Inside YouPickScreen component
+  const handleRandomPick = () => {
+    // Select a random restaurant from the list
+    const randomIndex = Math.floor(Math.random() * restaurants.length);
+    const randomRestaurant = restaurants[randomIndex];
+    setSelectedRestaurant(randomRestaurant);
+    setModalVisible(true);
+  };
 
   useEffect(() => {
     // Logic to fetch restaurants based on user's distance
@@ -34,15 +50,9 @@ const YouPickScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>You Pick App Page</Text>
-      {restaurants.map((restaurant) => (
-        <TouchableOpacity
-          key={restaurant.id}
-          style={styles.restaurantButton}
-          onPress={() => handleRestaurantPress(restaurant)}
-        >
-          <Text>{restaurant.name}</Text>
-        </TouchableOpacity>
-      ))}
+      <TouchableOpacity style={styles.randomButton} onPress={handleRandomPick}>
+        <Text style={styles.buttonText}>You Pick</Text>
+      </TouchableOpacity>
       <Modal
         animationType="slide"
         transparent={true}
@@ -52,14 +62,11 @@ const YouPickScreen = ({ navigation }) => {
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>{selectedRestaurant?.name}</Text>
-            <TouchableOpacity style={styles.modalButton}>
-              <Text>View Website</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.modalButton}>
-              <Text>View on Maps</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.modalButton}>
-              <Text>View Menu</Text>
+            <TouchableOpacity
+              style={styles.modalButton}
+              onPress={restaurantLocation}
+            >
+              <Text>Get Directions</Text>
             </TouchableOpacity>
             <Button title="Close" onPress={closeModal} />
           </View>

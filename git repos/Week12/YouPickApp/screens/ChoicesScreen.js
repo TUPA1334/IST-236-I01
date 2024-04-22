@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, Button, TouchableOpacity, Modal } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Linking, View, Text, StyleSheet, Button, TouchableOpacity, Modal } from "react-native";
 
 const ChoicesScreen = ({ navigation }) => {
   const [selectedCriteria, setSelectedCriteria] = useState({
@@ -10,9 +10,37 @@ const ChoicesScreen = ({ navigation }) => {
     restaurantStyle: null,
   });
 
+  //const API_KEY = 'YOUR_API_KEY';
+  const API_URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=latitude,longitude&radius=500&type=restaurant&key=${API_KEY}`;
   const [restaurants, setRestaurants] = useState([]);
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
+
+  const restaurantWebsite = () => {
+    Linking.openURL("https://www.google.com");
+  };
+  const restaurantLocation = () => {
+    const { latitude, longitude } = selectedRestaurant.location;
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
+    Linking.openURL(url);
+  };
+  const restaurantMenu = () => {
+    Linking.openURL("https://www.google.com/menu");
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+        setRestaurants(data.results);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleSearch = () => {
     // For testing purposes, create a list of dummy restaurants that fit the selected criteria
@@ -71,13 +99,13 @@ const ChoicesScreen = ({ navigation }) => {
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>{selectedRestaurant?.name}</Text>
-            <TouchableOpacity style={styles.modalButton}>
+            <TouchableOpacity style={styles.modalButton} onPress={restaurantWebsite}>
               <Text>View Website</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.modalButton}>
+            <TouchableOpacity style={styles.modalButton} onPress={restaurantLocation}>
               <Text>View on Maps</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.modalButton}>
+            <TouchableOpacity style={styles.modalButton} onPress={restaurantMenu}>
               <Text>View Menu</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.closeButton} onPress={closeModal}>

@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Platform } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./screens/HomeScreen";
@@ -10,6 +10,24 @@ import YouPickScreen from "./screens/YouPickScreen";
 import React from "react";
 import colors from "./constants/colors";
 import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
+import Geolocation from "@react-native-community/geolocation";
+import { Loader } from "@googlemaps/js-api-loader";
+
+const loader = new Loader({
+  //apiKey: "YOUR_API_KEY",
+  version: "weekly",
+  ...additionalOptions,
+});
+
+loader.load().then(async () => {
+  const { Map } = await google.maps.importLibrary("maps");
+
+  map = new Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+});
 
 const Stack = createStackNavigator();
 //const Drawer = createDrawerNavigator();
@@ -26,6 +44,8 @@ export default function App() {
         <Stack.Screen name="Chosen" component={ChosenScreen} />
       </Stack.Navigator>
     </NavigationContainer>
+
+
   );
 }
 
