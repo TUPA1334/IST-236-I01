@@ -7,17 +7,18 @@ import ChoicesScreen from "./screens/ChoicesScreen";
 import ChosenScreen from "./screens/ChosenScreen";
 import SearchScreen from "./screens/SearchScreen";
 import YouPickScreen from "./screens/YouPickScreen";
+import RestaurantFinder from "./components/RestaurantFinder";
 import React from "react";
 import colors from "./constants/colors";
 import * as SplashScreen from "expo-splash-screen";
+import * as Location from "expo-location";
 import { useEffect } from "react";
-import Geolocation from "@react-native-community/geolocation";
 import { Loader } from "@googlemaps/js-api-loader";
 
 const loader = new Loader({
-  //apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyAfYagHjr4XvfisMKa8iC6cu7Zr6YlDKYw",
   version: "weekly",
-  ...additionalOptions,
+  //additionalOptions,
 });
 
 loader.load().then(async () => {
@@ -37,15 +38,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} /> 
+        <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Choices" component={ChoicesScreen} />
         <Stack.Screen name="You Pick!" component={YouPickScreen} />
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="Chosen" component={ChosenScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-
-
   );
 }
 

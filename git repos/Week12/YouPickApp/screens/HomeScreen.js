@@ -26,14 +26,14 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   titleContainer: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
-    width: '100%',
-    alignItems: 'center',
+    width: "100%",
+    alignItems: "center",
     paddingTop: 50,
   },
   title: {
@@ -41,14 +41,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'flex-end',
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "flex-end",
     marginBottom: 20,
-    width: '100%',
+    width: "100%",
   },
   button: {
-    width: '40%', // Adjust button width as needed
+    width: "40%", // Adjust button width as needed
   },
 });
 

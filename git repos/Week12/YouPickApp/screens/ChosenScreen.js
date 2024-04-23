@@ -30,23 +30,54 @@ const ChoicesScreen = ({ navigation }) => {
       <Text style={styles.title}>Choices Screen</Text>
       <View style={styles.criteriaContainer}>
         <Text>Distance: {selectedCriteria.distance || "Select distance"}</Text>
-        <Button title="Select" onPress={() => setSelectedCriteria({ ...selectedCriteria, distance: 1 })} />
+        <Button
+          title="Select"
+          onPress={() =>
+            setSelectedCriteria({ ...selectedCriteria, distance: 1 })
+          }
+        />
       </View>
       <View style={styles.criteriaContainer}>
         <Text>Rating: {selectedCriteria.rating || "Select rating"}</Text>
-        <Button title="Select" onPress={() => setSelectedCriteria({ ...selectedCriteria, rating: 4.5 })} />
+        <Button
+          title="Select"
+          onPress={() =>
+            setSelectedCriteria({ ...selectedCriteria, rating: 4.5 })
+          }
+        />
       </View>
       <View style={styles.criteriaContainer}>
         <Text>Price: {selectedCriteria.price || "Select price"}</Text>
-        <Button title="Select" onPress={() => setSelectedCriteria({ ...selectedCriteria, price: 2 })} />
+        <Button
+          title="Select"
+          onPress={() => setSelectedCriteria({ ...selectedCriteria, price: 2 })}
+        />
       </View>
       <View style={styles.criteriaContainer}>
-        <Text>Food Type: {selectedCriteria.foodType || "Select food type"}</Text>
-        <Button title="Select" onPress={() => setSelectedCriteria({ ...selectedCriteria, foodType: "American" })} />
+        <Text>
+          Food Type: {selectedCriteria.foodType || "Select food type"}
+        </Text>
+        <Button
+          title="Select"
+          onPress={() =>
+            setSelectedCriteria({ ...selectedCriteria, foodType: "American" })
+          }
+        />
       </View>
       <View style={styles.criteriaContainer}>
-        <Text>Restaurant Style: {selectedCriteria.restaurantStyle || "Select restaurant style"}</Text>
-        <Button title="Select" onPress={() => setSelectedCriteria({ ...selectedCriteria, restaurantStyle: "Casual Dining" })} />
+        <Text>
+          Restaurant Style:{" "}
+          {selectedCriteria.restaurantStyle || "Select restaurant style"}
+        </Text>
+        <Button
+          title="Select"
+          onPress={() =>
+            setSelectedCriteria({
+              ...selectedCriteria,
+              restaurantStyle: "Casual Dining",
+            })
+          }
+        />
       </View>
       <Button title="Search" onPress={handleSearch} />
     </View>
