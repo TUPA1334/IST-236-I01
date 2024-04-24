@@ -45,7 +45,7 @@ const RestaurantFinder = () => {
       location: `${latitude},${longitude}`,
       radius: 5000, // 5 kilometers
       type: "restaurant",
-      key: "ASK_For_Your_Own_Key",
+      key: "GOOGLE_PLACES_API_KEY",
     };
 
     // Use Google Places API's Nearby Search
@@ -70,7 +70,7 @@ const RestaurantFinder = () => {
           console.log(data, details);
         }}
         query={{
-          key: "AIzaSyAfYagHjr4XvfisMKa8iC6cu7Zr6YlDKYw",
+          key: "GOOGLE_PLACES_API_KEY",
           language: "en",
         }}
         styles={{

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Button, Modal, FlatList } from "react-native";
 
-const GOOGLE_PLACES_API_KEY = "ASK_For_Your_Own_Key";
+const GOOGLE_PLACES_API_KEY = "YOUR_GOOGLE_PLACES_API_KEY_HERE";
 
 const ChoicesScreen = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);

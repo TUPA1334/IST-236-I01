@@ -38,7 +38,7 @@ const YouPickScreen = ({ navigation }) => {
   };
 
   const fetchRestaurants = async (latitude, longitude) => {
-    const API_KEY = "Ask_For_Your_Own_Key";
+    const API_KEY = "GOOGLE_PLACES_API_KEY";
     const radius = 5000; // 5 kilometers
     const type = "restaurant";
 
